@@ -1,0 +1,29 @@
+.blog-list-item {
+    margin: 8px;
+    box-shadow: inset 0px 0px 20px 0px blue;
+
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.blog-lits-item__title {
+    margin: 8px;
+}
+
+.blog-lits-item__post {
+    margin: 8px;
+}
+
+.blog-lits-item__footer {
+    display: flex;
+    flex-flow: row;
+}
+
+.blog-lits-item__date {
+    margin: 8px;
+}
+
+.blog-lits-item__author {
+    margin: 8px;
+}
