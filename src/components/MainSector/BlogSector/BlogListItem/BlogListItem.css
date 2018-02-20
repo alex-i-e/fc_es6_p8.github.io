@@ -1,6 +1,6 @@
 .blog-list-item {
     margin: 8px;
-    box-shadow: inset 0px 0px 20px 0px blue;
+    box-shadow: -3px 1px 9px 0px #adadad;
 
     display: flex;
     flex-flow: column;

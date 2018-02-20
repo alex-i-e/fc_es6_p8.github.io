@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
+import './FilterSector.css';
 
 class FilterSector extends Component {
     constructor() {
         super();
     }
 
-    onClickFindButton () {
+    onClickFindButton() {
 
     }
 
-    render () {
+    render() {
 
         return (
             <div className="filter-sector">
                 <div className="filter-form">
-                    <div>
-                        <label htmlFor="blog-title">By Title</label>
-                        <input type="text" id="blog-title" />
-                    </div>
-                    <button onClick={this.onClickFindButton}>
+                    <label htmlFor="blog-title">By Title</label>
+                    <input type="text" id="blog-title"/>
+                    <button className="filter-submit"
+                            onClick={this.onClickFindButton}>
                         Find
                     </button>
                 </div>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import BlogButton from './BlogButton/BlogButton';
 import BlogForm from './BlogForm/BlogForm';
+import './BlogMakerSector.css';
 
 class BlogMaker extends Component {
     constructor() {

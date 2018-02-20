@@ -1,3 +1,12 @@
-.blog {
+.blog-form {
+    margin: 8px;
+}
 
+.blog-form-scope {
+    display: flex;
+    flex-flow: column;
+}
+
+.blog-submit {
+    margin: 8px;
 }

@@ -1,11 +1,21 @@
+/*
+Fonts*/
+* {
+    font: small-caption;
+}
+
+/*
+MarkUp
+*/
 .item-header {
     grid-area: header;
 }
 
 .item-main {
+    min-width: 250px;
     grid-area: main;
     margin: 16px;
-    box-shadow: inset 0px 0px 20px 0px blue;
+    box-shadow: -3px 1px 9px 0px #adadad;
 }
 
 .item-sidebar {
@@ -17,13 +27,27 @@
     grid-area: footer;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 50px 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "header header header header" "main main . sidebar" "footer footer footer footer";
+@media (min-width: 500px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 50px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "header header header header" "main main . sidebar" "footer footer footer footer";
+    }
 }
 
+@media (max-width: 400px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 50px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "sidebar sidebar sidebar sidebar" "main main main main" "footer footer footer footer";
+    }
+}
+
+/*
+App - style
+*/
 .App {
     text-align: center;
 }

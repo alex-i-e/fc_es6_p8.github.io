@@ -1,3 +1,8 @@
-.blog {
+.blog-maker-sector {
+    display: flex;
+    flex-flow: column;
 
+    margin: 8px;
+    padding: 8px;
+    box-shadow: -3px 1px 9px 0px #adadad;
 }

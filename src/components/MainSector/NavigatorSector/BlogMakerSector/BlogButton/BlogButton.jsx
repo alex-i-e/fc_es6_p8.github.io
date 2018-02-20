@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './BlogButton.css';
 
 class BlogButton extends Component {
     constructor() {
