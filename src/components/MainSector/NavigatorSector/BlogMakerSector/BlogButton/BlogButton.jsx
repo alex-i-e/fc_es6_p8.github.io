@@ -2,22 +2,12 @@ import React, {Component} from 'react';
 import './BlogButton.css';
 
 class BlogButton extends Component {
-    constructor() {
-        super();
-    }
 
-    onClickNewPost () {
-
-    }
-
-    render () {
-
+    render() {
         return (
-            <div className="blog-button">
-                <button onClick={this.onClickNewPost}>
-                    Create new Post
-                </button>
-            </div>
+            <button className="blog-button" onClick={this.props.onClickButton}>
+                Create new Post
+            </button>
         )
     }
 }

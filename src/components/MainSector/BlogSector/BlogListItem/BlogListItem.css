@@ -7,12 +7,23 @@
     align-items: flex-start;
 }
 
+.blog-list-item__wrapper {
+    width: 100%;
+    margin: 4px;
+    box-shadow: -3px 1px 9px 0px #adadad;
+}
+
 .blog-lits-item__title {
     margin: 8px;
+    text-align: left;
+
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .blog-lits-item__post {
     margin: 8px;
+    text-align: left;
 }
 
 .blog-lits-item__footer {
@@ -22,8 +33,10 @@
 
 .blog-lits-item__date {
     margin: 8px;
+    font-weight: 600;
 }
 
 .blog-lits-item__author {
     margin: 8px;
+    font-weight: 600;
 }

@@ -12,8 +12,8 @@ class NavigatorSector extends Component {
 
         return (
             <div className="item-sidebar navigator-sector">
-                <BlogMakerSector/>
-                <FilterSector/>
+                <BlogMakerSector onAddNewPost={this.props.onAddNewPost}/>
+                <FilterSector onChangeFilter={this.props.onChangeFilter}/>
             </div>
         )
     }

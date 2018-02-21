@@ -10,3 +10,6 @@
 .blog-submit {
     margin: 8px;
 }
+.blog-submit:hover {
+    box-shadow: -3px 1px 9px 0px #adadad;
+}

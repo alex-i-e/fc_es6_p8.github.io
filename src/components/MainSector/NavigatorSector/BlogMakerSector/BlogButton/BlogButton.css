@@ -1,3 +1,7 @@
 .blog-button {
     margin: 16px;
+    cursor: pointer;
+}
+.blog-button:hover {
+    box-shadow: -3px 1px 9px 0px #adadad;
 }

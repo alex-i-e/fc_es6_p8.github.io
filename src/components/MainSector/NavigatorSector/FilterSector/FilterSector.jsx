@@ -2,28 +2,21 @@ import React, {Component} from 'react';
 import './FilterSector.css';
 
 class FilterSector extends Component {
-    constructor() {
-        super();
-    }
-
-    onClickFindButton() {
-
-    }
 
     render() {
 
         return (
             <div className="filter-sector">
                 <div className="filter-form">
-                    <label htmlFor="blog-title">By Title</label>
-                    <input type="text" id="blog-title"/>
-                    <button className="filter-submit"
-                            onClick={this.onClickFindButton}>
-                        Find
-                    </button>
+                    <label htmlFor="blog-author">Filter By Author</label>
+                    <input type="text" id="blog-author" onChange={this.onChangeFilter.bind(this)}/>
                 </div>
             </div>
         )
+    }
+
+    onChangeFilter = (e) => {
+        this.props.onChangeFilter && this.props.onChangeFilter(e.target.value);
     }
 }
 
