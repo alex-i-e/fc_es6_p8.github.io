@@ -1,4 +1,4 @@
-# fc_es6_p7.github.io
+# fc_es6_p8.github.io
 ReactJS
 
 Use for `build` and `start` use scripts in `package.json`:
