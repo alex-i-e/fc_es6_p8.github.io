@@ -8,8 +8,9 @@ const mapStateToBlogButtonProps = (state) => ({
 });
 
 const mapDispatchToBlogButtonProps = (dispatch) => ({
-    onChangeFormState: (flag) =>
-        dispatch({type: BLOG_CREATOR_TOGGLE, value: flag})
+    onChangeFormState(flag) {
+        dispatch({type: BLOG_CREATOR_TOGGLE, value: flag});
+    },
 });
 
 class BlogButton extends Component {

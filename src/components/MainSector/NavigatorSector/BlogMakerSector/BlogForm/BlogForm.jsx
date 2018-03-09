@@ -8,10 +8,12 @@ const mapStateToBlogFormProps = (state) => ({
 });
 
 const mapDispatchToBlogFormProps = (dispatch) => ({
-    onBlogSubmit: (newBlog) =>
-        dispatch({type: ADD_NEW_BLOG, value: newBlog}),
-    onChangeFormState: (flag) =>
-        dispatch({type: BLOG_CREATOR_TOGGLE, value: flag}),
+    onBlogSubmit(newBlog) {
+        dispatch({type: ADD_NEW_BLOG, value: newBlog});
+    },
+    onChangeFormState(flag) {
+        dispatch({type: BLOG_CREATOR_TOGGLE, value: flag});
+    },
 });
 
 class BlogForm extends Component {

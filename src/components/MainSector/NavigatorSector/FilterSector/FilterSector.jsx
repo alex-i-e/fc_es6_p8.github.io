@@ -4,8 +4,9 @@ import './FilterSector.css';
 import {FILTER_BY_AUTHOR_WAS_CHANGED} from "../../../../constants/actionTypes";
 
 const mapDispatchToFilterSectorProps = (dispatch) => ({
-    onChangeFilter: (filterType, value) =>
-        dispatch({type: FILTER_BY_AUTHOR_WAS_CHANGED, value}),
+    onChangeFilter (filterType, value) {
+        dispatch({type: FILTER_BY_AUTHOR_WAS_CHANGED, value});
+    },
 });
 
 class FilterSector extends Component {
