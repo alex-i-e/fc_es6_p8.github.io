@@ -28,22 +28,30 @@ class BlogForm extends Component {
                 <form onSubmit={this.onSubmitPost.bind(this)}
                       className="blog-form-scope">
                     <label required htmlFor="blog-author">Author:</label>
-                    <input onChange={this.onChangeInput.bind(this, 'author')}
+                    <input ref={node => {
+                        this.newBlog.author = node;
+                    }}
                            type="text"
                            id="blog-author"/>
 
                     <label required htmlFor="blog-title">Title:</label>
-                    <input onChange={this.onChangeInput.bind(this, 'title')}
+                    <input ref={node => {
+                        this.newBlog.title = node;
+                    }}
                            type="text"
                            id="blog-title"/>
 
                     <label htmlFor="blog-body">Body:</label>
-                    <input onChange={this.onChangeInput.bind(this, 'body')}
+                    <input ref={node => {
+                        this.newBlog.body = node;
+                    }}
                            type="text"
                            id="blog-body"/>
 
                     <label htmlFor="blog-date">Date:</label>
-                    <input onChange={this.onChangeInput.bind(this, 'date')}
+                    <input ref={node => {
+                        this.newBlog.date = node;
+                    }}
                            type="date"
                            id="blog-date"/>
 
@@ -53,15 +61,8 @@ class BlogForm extends Component {
         )
     }
 
-    onChangeInput = (type, event) => {
-        this.newBlog = {
-            ...this.newBlog,
-            [type]: event.target.value,
-        };
-    };
-
     onSubmitPost = (e) => {
-        if (!this.newBlog.author) {
+        if (!this.newBlog.author.value) {
             alert('Required fields need to fill');
             e.stopPropagation();
             e.preventDefault();
@@ -69,12 +70,11 @@ class BlogForm extends Component {
         }
 
         this.props.onBlogSubmit({
-            author: this.newBlog.author,
-            title: this.newBlog.title,
-            body: this.newBlog.body,
-            date: this.newBlog.date,
+            author: this.newBlog.author.value,
+            title: this.newBlog.title.value,
+            body: this.newBlog.body.value,
+            date: this.newBlog.date.value,
         });
-
         this.props.onChangeFormState(!this.props.isFormOpen);
     };
 }
