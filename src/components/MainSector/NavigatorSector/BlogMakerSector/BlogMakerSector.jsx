@@ -1,30 +1,32 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
 import BlogButton from './BlogButton/BlogButton';
 import BlogForm from './BlogForm/BlogForm';
 import './BlogMakerSector.css';
+import {BLOG_CREATOR_TOGGLE} from "../../../../constants/actionTypes";
 
-class BlogMaker extends Component {
-    state = {
-        isFormOpen: false
-    };
+const mapStateToBlogMakerSectorProps = (state) => ({
+    isFormOpen: state.blog.isOpenNewBlogForm,
+});
 
+const mapDispatchToBlogMakerSectorProps = (dispatch) => ({
+    onChangeFormState: (flag) =>
+        dispatch({type: BLOG_CREATOR_TOGGLE, value: flag}),
+});
+
+class BlogMakerSector extends Component {
     render() {
-        const body = this.state.isFormOpen
-            ? <BlogForm onAddNewPost={this.props.onAddNewPost}
-                        onClickButton={this.onChangeFormState}/>
-            : <BlogButton onClickButton={this.onChangeFormState}/>;
+        const body = this.props.isFormOpen
+            ? <BlogForm />
+            : <BlogButton />;
+
         return (
             <div className="blog-maker-sector">
                 {body}
             </div>
         )
     }
-
-    onChangeFormState = () => {
-        this.setState({
-            isFormOpen: !this.state.isFormOpen
-        });
-    };
 }
 
-export default BlogMaker;
+export default connect(mapStateToBlogMakerSectorProps, mapDispatchToBlogMakerSectorProps)(BlogMakerSector);

@@ -7,18 +7,10 @@ class MainSector extends Component {
         return (
             <div className="container main-sector">
                 <BlogSector />
-                <NavigatorSector onAddNewPost={this.onAddNewPost.bind(this)}/>
+                <NavigatorSector />
             </div>
         )
     }
-
-    onAddNewPost = post => {
-        const list = this.state.blogList.concat(post);
-        this.setState({
-            blogList: list,
-            blogListByFilter: list.filter(item => item['author'].indexOf(this.state.authorFilter) !== -1),
-        });
-    };
 }
 
 export default MainSector;

@@ -1,4 +1,4 @@
-import {HOME_PAGE_LOADED} from '../constants/actionTypes';
+import {ADD_NEW_BLOG, HOME_PAGE_LOADED} from '../constants/actionTypes';
 import BlogListMock from './blogListMock.json';
 
 const initState = {
@@ -11,6 +11,14 @@ export default (state = initState, action) => {
             return {
                 ...state,
                 blogList: action.value,
+            };
+        case ADD_NEW_BLOG:
+            return {
+                ...state,
+                blogList: [
+                    action.value,
+                    ...state.blogList,
+                ],
             };
         default:
             return state;

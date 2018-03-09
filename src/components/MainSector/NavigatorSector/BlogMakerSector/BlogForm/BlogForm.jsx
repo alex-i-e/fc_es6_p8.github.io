@@ -1,17 +1,28 @@
 import React, {Component} from 'react';
 import './BlogForm.css';
+import {connect} from 'react-redux';
+import {ADD_NEW_BLOG, BLOG_CREATOR_TOGGLE} from "../../../../../constants/actionTypes";
+
+const mapStateToBlogFormProps = (state) => ({
+    isFormOpen: state.blog.isOpenNewBlogForm,
+});
+
+const mapDispatchToBlogFormProps = (dispatch) => ({
+    onBlogSubmit: (newBlog) =>
+        dispatch({type: ADD_NEW_BLOG, value: newBlog}),
+    onChangeFormState: (flag) =>
+        dispatch({type: BLOG_CREATOR_TOGGLE, value: flag}),
+});
 
 class BlogForm extends Component {
-
-    state = {
-        blog_author: '',
-        blog_title: '',
-        blog_body: '',
-        blog_date: '',
+    newBlog = {
+        author: '',
+        title: '',
+        body: '',
+        date: '',
     };
 
     render() {
-
         return (
             <div className="blog-form">
                 <form onSubmit={this.onSubmitPost.bind(this)}
@@ -43,28 +54,29 @@ class BlogForm extends Component {
     }
 
     onChangeInput = (type, event) => {
-        this.setState({
-            ['blog_' + type]: event.target.value
-        });
+        this.newBlog = {
+            ...this.newBlog,
+            [type]: event.target.value,
+        };
     };
 
     onSubmitPost = (e) => {
-        if (!this.state.blog_author) {
+        if (!this.newBlog.author) {
             alert('Required fields need to fill');
             e.stopPropagation();
             e.preventDefault();
             return;
         }
 
-        this.props.onAddNewPost && this.props.onAddNewPost({
-            author: this.state.blog_author,
-            title: this.state.blog_title,
-            body: this.state.blog_body,
-            date: this.state.blog_date,
+        this.props.onBlogSubmit({
+            author: this.newBlog.author,
+            title: this.newBlog.title,
+            body: this.newBlog.body,
+            date: this.newBlog.date,
         });
 
-        this.props.onClickButton && this.props.onClickButton();
+        this.props.onChangeFormState(!this.props.isFormOpen);
     };
 }
 
-export default BlogForm;
+export default connect(mapStateToBlogFormProps, mapDispatchToBlogFormProps)(BlogForm);
