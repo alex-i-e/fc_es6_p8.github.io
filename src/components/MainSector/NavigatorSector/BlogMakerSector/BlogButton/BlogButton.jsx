@@ -27,4 +27,7 @@ class BlogButton extends Component {
     };
 }
 
-export default connect(mapStateToBlogButtonProps, mapDispatchToBlogButtonProps)(BlogButton);
+export default connect(
+    mapStateToBlogButtonProps,
+    mapDispatchToBlogButtonProps
+)(BlogButton);

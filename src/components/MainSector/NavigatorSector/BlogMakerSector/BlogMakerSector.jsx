@@ -23,4 +23,7 @@ class BlogMakerSector extends Component {
     }
 }
 
-export default connect(mapStateToBlogMakerSectorProps, null)(BlogMakerSector);
+export default connect(
+    mapStateToBlogMakerSectorProps,
+    null
+)(BlogMakerSector);

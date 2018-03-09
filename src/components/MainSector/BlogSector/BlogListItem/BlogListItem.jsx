@@ -32,4 +32,7 @@ class BlogListItem extends Component {
     }
 }
 
-export default connect(mapStateToBlogListItemProps)(BlogListItem);
+export default connect(
+    mapStateToBlogListItemProps,
+    null
+)(BlogListItem);

@@ -81,4 +81,7 @@ class BlogForm extends Component {
     };
 }
 
-export default connect(mapStateToBlogFormProps, mapDispatchToBlogFormProps)(BlogForm);
+export default connect(
+    mapStateToBlogFormProps,
+    mapDispatchToBlogFormProps
+)(BlogForm);

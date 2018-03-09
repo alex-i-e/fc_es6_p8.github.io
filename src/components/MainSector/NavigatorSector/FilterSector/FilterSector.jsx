@@ -26,4 +26,7 @@ class FilterSector extends Component {
     }
 }
 
-export default connect(null, mapDispatchToFilterSectorProps)(FilterSector);
+export default connect(
+    null,
+    mapDispatchToFilterSectorProps
+)(FilterSector);

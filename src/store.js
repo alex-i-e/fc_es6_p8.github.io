@@ -6,6 +6,7 @@ import reducer from './reducer';
 
 import {routerMiddleware} from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory';
+import {loadState} from "./localStorageState";
 
 export const history = createHistory();
 
@@ -30,5 +31,10 @@ const getMiddleware = () => {
     }
 };
 
+const persistedState = loadState();
+
 export const store = createStore(
-    reducer, composeWithDevTools(getMiddleware()));
+    reducer,
+    persistedState,
+    composeWithDevTools(getMiddleware()),
+);
