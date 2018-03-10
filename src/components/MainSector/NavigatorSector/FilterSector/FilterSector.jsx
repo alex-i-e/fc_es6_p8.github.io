@@ -1,7 +1,12 @@
+// @flow
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './FilterSector.css';
 import {FILTER_BY_AUTHOR_WAS_CHANGED} from "../../../../constants/actionTypes";
+
+type Props = {
+    onChangeFilter: (filterType: string, value: string) => void
+}
 
 const mapDispatchToFilterSectorProps = (dispatch) => ({
     onChangeFilter (filterType, value) {
@@ -9,7 +14,7 @@ const mapDispatchToFilterSectorProps = (dispatch) => ({
     },
 });
 
-class FilterSector extends Component {
+class FilterSector extends Component<Props> {
     render() {
         return (
             <div className="filter-sector">
@@ -21,8 +26,8 @@ class FilterSector extends Component {
         )
     }
 
-    onChangeFilter = (e) => {
-        this.props.onChangeFilter('author', e.target.value);
+    onChangeFilter = (e: SyntheticKeyboardEvent<HTMLButtonElement>) => {
+        this.props.onChangeFilter('author', e.currentTarget.value);
     }
 }
 

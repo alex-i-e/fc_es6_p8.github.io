@@ -1,15 +1,22 @@
+// @flow
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-const FilterLink = ({urlState, children, onSubmitPost}) => (
-    <NavLink to={urlState === 'home' ? '' : urlState}
+type Props = {
+    urlState: string,
+    children?: string,
+    onSubmitPost?: (e: SyntheticEvent<HTMLElement>) => void,
+};
+
+const FilterLink = (props: Props) => (
+    <NavLink to={props.urlState === 'home' ? '' : props.urlState}
              className="blog-button"
              activeStyle={{
                  textDecoration: "none",
                  color: 'blue',
              }}
-             onClick={onSubmitPost}>
-        {children}
+             onClick={props.onSubmitPost}>
+        {props.children}
     </NavLink>
 );
 

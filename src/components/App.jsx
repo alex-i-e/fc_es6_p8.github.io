@@ -1,3 +1,4 @@
+// @flow
 import React, {Component} from 'react';
 import logo from '../logo.svg';
 import MainSector from './MainSector/MainSector';
@@ -5,7 +6,7 @@ import './App.css';
 
 import {Route, Switch} from 'react-router-dom';
 
-class App extends Component {
+class App extends Component<{}, {}> {
     render() {
         return (
             <div className="App">
