@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './BlogForm.css';
 import {connect} from 'react-redux';
 import {ADD_NEW_BLOG, BLOG_CREATOR_TOGGLE} from "../../../../../constants/actionTypes";
+import FilterLink from "../../../../ActionLink/ActionLink";
 
 const mapStateToBlogFormProps = (state) => ({
     isFormOpen: state.blog.isOpenNewBlogForm,
@@ -57,7 +58,10 @@ class BlogForm extends Component {
                            type="date"
                            id="blog-date"/>
 
-                    <input type="submit" className="blog-submit" value="Submit POST"/>
+                    <FilterLink urlState="home"
+                                onSubmitPost={this.onSubmitPost.bind(this)}>
+                        Submit POST
+                    </FilterLink>
                 </form>
             </div>
         )

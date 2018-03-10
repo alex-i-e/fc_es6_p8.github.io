@@ -19,7 +19,7 @@ class App extends Component {
 
                 <Switch>
                     <Route exact path="/test" children={<div>345</div>}/>
-                    <Route exact path="/" component={MainSector}/>
+                    <Route exact path="/*" component={MainSector}/>
                 </Switch>
 
             </div>

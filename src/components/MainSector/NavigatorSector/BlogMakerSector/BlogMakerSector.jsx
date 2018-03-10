@@ -4,26 +4,22 @@ import {connect} from 'react-redux';
 import BlogButton from './BlogButton/BlogButton';
 import BlogForm from './BlogForm/BlogForm';
 import './BlogMakerSector.css';
-
-const mapStateToBlogMakerSectorProps = (state) => ({
-    isFormOpen: state.blog.isOpenNewBlogForm,
-});
+import {Route, Router, Switch} from "react-router";
+import {history} from '../../../../store';
 
 class BlogMakerSector extends Component {
     render() {
-        const body = this.props.isFormOpen
-            ? <BlogForm />
-            : <BlogButton />;
-
         return (
             <div className="blog-maker-sector">
-                {body}
+                <Router history={history}>
+                    <Switch>
+                        <Route path="/edit" component={BlogForm}/>
+                        <Route path="/" component={BlogButton}/>
+                    </Switch>
+                </Router>
             </div>
         )
     }
 }
 
-export default connect(
-    mapStateToBlogMakerSectorProps,
-    null
-)(BlogMakerSector);
+export default connect()(BlogMakerSector);

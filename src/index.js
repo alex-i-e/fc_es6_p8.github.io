@@ -1,3 +1,4 @@
+// import 'babel-polyfill'; // TODO; add polyfill to project
 import ReactDOM from 'react-dom';
 import React from 'react';
 import './index.css';

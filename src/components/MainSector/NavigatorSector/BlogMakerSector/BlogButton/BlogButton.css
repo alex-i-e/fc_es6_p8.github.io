@@ -1,7 +1,15 @@
 .blog-button {
     margin: 16px;
     cursor: pointer;
+
+    box-shadow: -3px 1px 18px 0 #adadad;
+    text-decoration: none;
 }
+
 .blog-button:hover {
-    box-shadow: -3px 1px 9px 0px #adadad;
+    box-shadow: -3px 1px 9px 5px #adadad;
+}
+
+.blog-button:active {
+    color: black;
 }
