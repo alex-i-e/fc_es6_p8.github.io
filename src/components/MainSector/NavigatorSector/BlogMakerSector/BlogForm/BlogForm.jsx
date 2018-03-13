@@ -1,4 +1,3 @@
-// @flow
 import React, {Component} from 'react';
 import './BlogForm.css';
 import {connect} from 'react-redux';
@@ -18,24 +17,17 @@ const mapDispatchToBlogFormProps = (dispatch) => ({
     },
 });
 
-type Props = {
-    isFormOpen: boolean,
-    onBlogSubmit: (blog: any) => void,
-    onChangeFormState: (flag: boolean) => void,
-}
+class BlogForm extends Component {
 
-class BlogForm extends Component<Props> {
-    newBlog: {
-        author: HTMLButtonElement | any,
-        title: HTMLButtonElement | any,
-        body: HTMLButtonElement | any,
-        date: HTMLButtonElement | any,
-    } = {
-        author: {value: ''},
-        title: {value: ''},
-        body: {value: ''},
-        date: {value: ''},
-    };
+    constructor() {
+        super();
+        this.newBlog = {
+            author: {value: ''},
+            title: {value: ''},
+            body: {value: ''},
+            date: {value: ''},
+        };
+    }
 
     render() {
         return (
@@ -43,28 +35,28 @@ class BlogForm extends Component<Props> {
                 <form onSubmit={this.onSubmitPost.bind(this)}
                       className="blog-form-scope">
                     <label required htmlFor="blog-author">Author:</label>
-                    <input ref={(node: HTMLInputElement | any) => {
+                    <input ref={(node) => {
                         this.newBlog.author = node;
                     }}
                            type="text"
                            id="blog-author"/>
 
                     <label required htmlFor="blog-title">Title:</label>
-                    <input ref={(node: HTMLInputElement | any) => {
+                    <input ref={(node) => {
                         this.newBlog.title = node;
                     }}
                            type="text"
                            id="blog-title"/>
 
                     <label htmlFor="blog-body">Body:</label>
-                    <input ref={(node: HTMLInputElement | any) => {
+                    <input ref={(node) => {
                         this.newBlog.body = node;
                     }}
                            type="text"
                            id="blog-body"/>
 
                     <label htmlFor="blog-date">Date:</label>
-                    <input ref={(node: HTMLInputElement | any) => {
+                    <input ref={(node) => {
                         this.newBlog.date = node;
                     }}
                            type="date"
@@ -79,10 +71,9 @@ class BlogForm extends Component<Props> {
         )
     }
 
-    onSubmitPost = (e: SyntheticEvent<HTMLElement>) => {
+    onSubmitPost(e) {
         if (!this.newBlog.author.value) {
             alert('Required fields need to fill');
-            e.stopPropagation();
             e.preventDefault();
             return;
         }

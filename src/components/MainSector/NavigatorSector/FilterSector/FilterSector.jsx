@@ -20,13 +20,13 @@ class FilterSector extends Component<Props> {
             <div className="filter-sector">
                 <div className="filter-form">
                     <label htmlFor="blog-author">Filter By Author</label>
-                    <input type="text" id="blog-author" onChange={this.onChangeFilter}/>
+                    <input type="text" id="blog-author" onChange={this.onChangeFilter.bind(this)}/>
                 </div>
             </div>
         )
     }
 
-    onChangeFilter = (e: SyntheticKeyboardEvent<HTMLButtonElement>) => {
+    onChangeFilter(e) {
         this.props.onChangeFilter('author', e.currentTarget.value);
     }
 }
