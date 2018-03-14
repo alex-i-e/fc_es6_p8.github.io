@@ -1,31 +1,37 @@
 // @flow
-import React, {Component} from 'react';
-import logo from '../logo.svg';
+import React, { Component } from 'react';
+// import logo from '../logo.svg';
 import MainSector from './MainSector/MainSector';
 import './App.css';
+import './MainSector/BlogSector/BlogListItem/BlogListItem.css';
+import './MainSector/NavigatorSector/BlogMakerSector/BlogButton/BlogButton.css';
+import './MainSector/NavigatorSector/BlogMakerSector/BlogForm/BlogForm.css';
+import './MainSector/NavigatorSector/BlogMakerSector/BlogMakerSector.css';
 
-import {Route, Switch} from 'react-router-dom';
 
+import { Route, Switch } from 'react-router-dom';
+
+// {logo}
 class App extends Component<{}, {}> {
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Blog on React</h1>
-                </header>
-                <p className="App-intro">
-                    Welcome to Blog Maker!
-                </p>
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src="" className="App-logo" alt="logo"/>
+          <h1 className="App-title">Blog on React</h1>
+        </header>
+        <p className="App-intro">
+          Welcome to Blog Maker!
+        </p>
 
-                <Switch>
-                    <Route exact path="/test" children={<div>345</div>}/>
-                    <Route exact path="/*" component={MainSector}/>
-                </Switch>
+        <Switch>
+          <Route exact path="/test" children={<div>345</div>}/>
+          <Route exact path="/*" component={MainSector}/>
+        </Switch>
 
-            </div>
-        );
-    }
+      </div>
+    );
+  }
 }
 
 export default App;

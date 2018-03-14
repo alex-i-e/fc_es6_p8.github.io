@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './BlogListItem.css';
+// import './BlogListItem.css';
 import {connect} from 'react-redux';
 
 const getVisibleBlogList = (blogList, {type, value}) =>

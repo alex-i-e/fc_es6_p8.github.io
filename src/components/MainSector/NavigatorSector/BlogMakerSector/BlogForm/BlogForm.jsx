@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './BlogForm.css';
+// import './BlogForm.css';
 import {connect} from 'react-redux';
 import {ADD_NEW_BLOG, BLOG_CREATOR_TOGGLE} from "../../../../../constants/actionTypes";
 import FilterLink from "../../../../ActionLink/ActionLink";

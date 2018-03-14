@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import BlogButton from './BlogButton/BlogButton';
 import BlogForm from './BlogForm/BlogForm';
-import './BlogMakerSector.css';
+// import './BlogMakerSector.css';
 import {Route, Router, Switch} from "react-router";
 import {history} from '../../../../store';
 
