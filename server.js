@@ -43,7 +43,7 @@ app.get('/', function (req, res) {
 
 });
 
-app.use('/static', express.static('../build/static'));
+app.use('/static', express.static('./build/static'));
 
 app.listen(9000);
 console.log('GOOD: /localhost:9000');
