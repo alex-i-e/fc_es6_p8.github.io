@@ -3,8 +3,10 @@ ReactJS
 
 Use for `build` and `start` use scripts in `package.json`:
 
-```diff
-   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-```
+#Scripts
+- start: for development on localhost:3100
+- build: make build for SSR
+- test: simple test with Jest+Enzyme
+- flow: complile files directly
+- server: start server using babel-node
+- hot-server: start hot-server with nodemon

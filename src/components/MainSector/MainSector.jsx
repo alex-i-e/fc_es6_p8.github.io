@@ -6,8 +6,8 @@ class MainSector extends Component {
     render() {
         return (
             <div className="container main-sector">
-                <BlogSector />
-                <NavigatorSector />
+                <BlogSector className="test-blog-sector"/>
+                <NavigatorSector className="test-navigator-sector"/>
             </div>
         )
     }

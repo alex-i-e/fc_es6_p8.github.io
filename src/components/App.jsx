@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import MainSector from './MainSector/MainSector';
 
-// {logo}
+// {logo} // TODO : provide logo through SSR
 class App extends Component<{}, {}> {
     render() {
         return (
