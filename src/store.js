@@ -39,8 +39,19 @@ const persistedState = ('' + process.env.BROWSER !== 'false') // TODO : check wh
     ? null // loadState()
     : null;
 
+
+if (typeof window === 'undefined') {
+    global.window = {}
+}
+
+// Grab the state from a global variable injected into the server-generated HTML
+const preloadedState = window.__PRELOADED_STATE__
+
+// Allow the passed state to be garbage-collected
+delete window.__PRELOADED_STATE__
+
 export const store = createStore(
     reducer,
-    // persistedState,
+    preloadedState,
     composeWithDevTools(getMiddleware()),
 );

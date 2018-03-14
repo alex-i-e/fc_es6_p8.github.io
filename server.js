@@ -4,26 +4,30 @@ import React from 'react';
 import serverTemplate from "./src/serverTemplate";
 import App from "./src/components/App";
 import {StaticRouter} from "react-router-dom";
+import {createStore} from 'redux';
+import reducer from './src/reducer';
+import {Provider} from "react-redux";
 
 const app = express();
 
-// app.use(express.static(path.join(__dirname, 'build')));
+
 app.get('/', function (req, res) {
 
-    // res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    // Create a new Redux store instance
+    const store = createStore(reducer);
 
     const context = {};
     const appString = renderToString(
-        <StaticRouter location={req.url}
-                      context={context}>
-            <App/>
-        </StaticRouter>
+        <Provider store={store}>
+            <StaticRouter location={req.url}
+                          context={context}>
+                <App/>
+            </StaticRouter>
+        </Provider>
     );
-    {/*<StaticRouter location={req.url}
-                  context={context}>
-        <App/>
-    </StaticRouter>*/
-    }
+
+    // Grab the initial state from our Redux store
+    const preloadedState = store.getState();
 
     // context.url will contain the URL to redirect to if a <Redirect> was used
     if (context.url) {
@@ -32,11 +36,13 @@ app.get('/', function (req, res) {
         });
         res.end();
     } else {
-        res.send(serverTemplate(appString));
+        // Send the rendered page back to the client
+        res.send(serverTemplate(appString, preloadedState));
         res.end();
     }
 
 });
+
 app.use('/static', express.static('../build/static'));
 
 app.listen(9000);
