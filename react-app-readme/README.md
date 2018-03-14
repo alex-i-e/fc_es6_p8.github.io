@@ -1594,7 +1594,7 @@ By default, the `package.json` of the generated project looks like this:
 ```js
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": _build,
     "test": "react-scripts test --env=jsdom"
 ```
 

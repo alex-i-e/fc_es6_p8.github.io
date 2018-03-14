@@ -1,6 +1,8 @@
-import {Action, ADD_NEW_BLOG, HOME_PAGE_LOADED} from '../constants/actionTypes';
+// @flow
+import type {Action} from '../constants/actionTypes';
+import {ADD_NEW_BLOG, HOME_PAGE_LOADED} from '../constants/actionTypes';
 import BlogListMock from './blogListMock.json';
-import {BlogType} from "../components/types/blogTypes";
+import type {BlogType} from "../components/types/blogTypes";
 
 type State = {
     +blogList: Array<BlogType>
