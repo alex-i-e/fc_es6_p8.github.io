@@ -1,7 +1,6 @@
 # fc_es6_p8.github.io
 ReactJS
 
-Use for `build` and `start` use scripts in `package.json`:
 
 #Scripts
 - start: for development on localhost:3100
