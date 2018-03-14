@@ -60,7 +60,7 @@
     "test": "cross-env PORT=3100 node scripts/test.js --env=jsdom",
     "flow": "flow",
     "server": "babel-node server.js",
-    "hot-server": "nodemon server.js --exec babel-node "
+    "hot-server": "nodemon server.js --exec babel-node --BROWSER=false"
   },
   "devDependencies": {
     "babel-preset-flow": "6.23.0",

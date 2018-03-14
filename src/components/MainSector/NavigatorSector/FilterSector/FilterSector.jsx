@@ -1,7 +1,6 @@
 // @flow
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import './FilterSector.css';
 import {FILTER_BY_AUTHOR_WAS_CHANGED} from "../../../../constants/actionTypes";
 
 type Props = {

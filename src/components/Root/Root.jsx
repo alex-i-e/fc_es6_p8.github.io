@@ -2,13 +2,13 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import App from '../App';
 import {history} from '../../store';
-import {Router, Route} from 'react-router';
+import {BrowserRouter} from "react-router-dom";
 
 const Root = ({store}) => (
     <Provider store={store}>
-        <Router history={history}>
-            <Route path="/" component={App}/>
-        </Router>
+        <BrowserRouter history={history}>
+            <App/>
+        </BrowserRouter>
     </Provider>
 );
 
